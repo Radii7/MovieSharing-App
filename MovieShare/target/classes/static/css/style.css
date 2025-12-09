@@ -1,0 +1,207 @@
+/* GLOBAL */
+body {
+    margin: 0;
+    padding: 0;
+    background: #141414;
+    font-family: Arial, sans-serif;
+    color: #ffffff;
+}
+
+/* NAVBAR */
+.navbar {
+    background: #000000;
+    color: #ffffff;
+    padding: 12px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar a {
+    color: #ffffff;
+    text-decoration: none;
+    margin-left: 18px;
+    font-size: 15px;
+}
+
+.navbar a:hover {
+    text-decoration: underline;
+}
+
+.brand {
+    font-size: 26px;
+    font-weight: bold;
+    color: #e50914;
+}
+
+/* BUTTONS */
+.btn {
+    display: inline-block;
+    padding: 8px 14px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.btn-red {
+    background: #e50914;
+    color: #ffffff;
+}
+
+.btn-red:hover {
+    background: #f6121d;
+}
+
+.btn-dark {
+    background: #333333;
+    color: #ffffff;
+}
+
+.btn-dark:hover {
+    background: #444444;
+}
+
+/* FORM CONTAINERS */
+.form-box {
+    width: 90%;
+    margin: 25px auto;
+    padding: 20px;
+    background: #1f1f1f;
+    border-radius: 6px;
+    box-shadow: 0 0 12px rgba(0,0,0,0.5);
+}
+
+.form-box input[type=text],
+.form-box input[type=password],
+.form-box input[type=url],
+.form-box input[type=file] {
+    width: 50%;
+    padding: 10px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    background: #333333;
+    color: #ffffff;
+}
+
+.form-box button {
+    padding: 10px 20px;
+    background: #e50914;
+    border: none;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.form-box button:hover {
+    background: #f6121d;
+}
+
+/* TABLES (Admin Page) */
+table {
+    width: 95%;
+    margin: 30px auto;
+    border-collapse: collapse;
+    background: #1f1f1f;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 14px;
+    border-bottom: 1px solid #333333;
+    text-align: center;
+}
+
+th {
+    background: #2b2b2b;
+    color: #ffffff;
+}
+
+td {
+    color: #cccccc;
+}
+
+/* MOVIE GRID (User Page) */
+.movie-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 18px;
+    padding: 0 40px 40px 40px;
+}
+
+.movie-card {
+    background: #1b1b1b;
+    border: 1px solid #262626; /* fixed line */
+    border-radius: 6px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.movie-card:hover {
+    transform: scale(1.08);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+}
+
+.movie-poster {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+}
+
+.movie-info {
+    padding: 10px;
+}
+
+.movie-title {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 6px;
+}
+
+.movie-type {
+    font-size: 12px;
+    color: #bbbbbb;
+    margin-bottom: 8px;
+}
+
+.movie-actions a {
+    margin-right: 6px;
+}
+
+/* VIDEO PLAYER */
+video {
+    width: 85%;
+    border-radius: 8px;
+    box-shadow: 0 0 25px rgba(0,0,0,0.7);
+}
+
+/* BACKGROUND BLUR (Watch Page) */
+.bg-blur {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    filter: blur(25px) brightness(35%);
+    z-index: -1;
+}
+
+/* TITLE / HEADINGS */
+.page-title {
+    margin: 20px 40px;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.header-title {
+    text-align: center;
+    padding: 25px 10px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #e50914;
+}

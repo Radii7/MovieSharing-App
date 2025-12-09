@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Register - MovieShare</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #141414;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .register-box {
+            width: 360px;
+            background: rgba(0, 0, 0, 0.85);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 25px rgba(0,0,0,0.6);
+        }
+
+        .register-title {
+            font-size: 26px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #e50914;
+            text-align: center;
+        }
+
+        .register-box input {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            background: #333;
+            border: none;
+            border-radius: 4px;
+            color: #fff;
+            font-size: 14px;
+        }
+
+        .register-box input:focus {
+            outline: none;
+            background: #444;
+        }
+
+        .register-btn {
+            width: 100%;
+            padding: 10px;
+            margin-top: 15px;
+            background: #e50914;
+            border: none;
+            border-radius: 4px;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 15px;
+        }
+
+        .register-btn:hover {
+            background: #f6121d;
+        }
+
+        .links {
+            margin-top: 15px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        .links a {
+            color: #e50914;
+            text-decoration: none;
+        }
+
+        .links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="register-box">
+
+    <div class="register-title">Create Account</div>
+
+    <form th:action="@{/register}" th:object="${form}" method="post">
+
+        <input type="text" th:field="*{username}" placeholder="Username" required>
+
+        <input type="password" th:field="*{password}" placeholder="Password" required>
+
+        <input type="password" th:field="*{confirmPassword}" placeholder="Confirm Password" required>
+
+        <button type="submit" class="register-btn">Register</button>
+    </form>
+
+    <div class="links">
+        <p>Already have an account? <a href="/login">Login</a></p>
+        <p><a href="/">Back to Movies</a></p>
+    </div>
+
+</div>
+
+</body>
+</html>

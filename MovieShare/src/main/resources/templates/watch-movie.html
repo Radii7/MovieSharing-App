@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${movie.title}">Watch Movie</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}"/>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #000;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        /* Background poster blur */
+        .bg-blur {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background-size: cover;
+            background-position: center;
+            filter: blur(25px) brightness(35%);
+            z-index: -1;
+        }
+
+        .header-title {
+            text-align: center;
+            padding: 25px 10px 10px 10px;
+            font-size: 28px;
+            font-weight: bold;
+            color: #e50914;
+        }
+
+        .video-container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        video {
+            width: 85%;
+            max-height: 75vh;
+            border-radius: 8px;
+            box-shadow: 0 0 25px rgba(0,0,0,0.7);
+        }
+
+        .controls {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .btn {
+            padding: 10px 18px;
+            border-radius: 4px;
+            font-size: 15px;
+            text-decoration: none;
+            margin: 10px;
+            display: inline-block;
+        }
+
+        .btn-red {
+            background: #e50914;
+            color: #fff;
+        }
+
+        .btn-red:hover {
+            background: #f6121d;
+        }
+
+        .btn-dark {
+            background: #333;
+            color: #fff;
+        }
+
+        .btn-dark:hover {
+            background: #444;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- Background Poster Blur -->
+<div class="bg-blur"
+     th:if="${movie.posterUrl != null}"
+     th:style="'background-image:url(' + ${movie.posterUrl} + ');'"></div>
+
+<div class="bg-blur"
+     th:if="${movie.posterUrl == null}"
+     style="background-image:url('/images/default-poster.jpg');"></div>
+
+<!-- Header -->
+<div class="header-title" th:text="'Now Watching: ' + ${movie.title}"></div>
+
+<!-- Video Player -->
+<div class="video-container">
+    <video controls autoplay>
+        <source th:src="@{'/movies/stream/' + ${movie.id}}" type="video/mp4">
+        Your browser does not support HTML5 video.
+    </video>
+</div>
+
+<!-- Buttons -->
+<div class="controls">
+    <a href="/" class="btn btn-dark">Back to Movies</a>
+    <a th:href="@{'/movies/download/' + ${movie.id}}" class="btn btn-red">Download</a>
+</div>
+
+</body>
+</html>
